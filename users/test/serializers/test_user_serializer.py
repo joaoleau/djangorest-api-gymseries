@@ -49,7 +49,7 @@ class UserCreateSerializerTestCase(TestCase):
             "Username precisa de no minimo 4 caracteres",
         )
 
-    def test_user_serializer_username_invalid(self):
+    def test_user_serializer_email_invalid(self):
         payload = {
             "username": "tt",
             "email": "teste",

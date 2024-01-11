@@ -14,3 +14,11 @@ class UserCreateSerializer(serializers.Serializer):
     password = serializers.CharField(max_length=250, validators=[validator_password])
     type = serializers.ChoiceField(choices=["Teacher", "Student"], required=False)
     full_name = serializers.CharField(max_length=150)
+
+
+class UserConfirmationRequestEmailSerializer(serializers.Serializer):
+    email = serializers.EmailField(write_only=True)
+
+
+class UserConfirmationRequestCodeSerializer(serializers.Serializer):
+    code = serializers.CharField(write_only=True)

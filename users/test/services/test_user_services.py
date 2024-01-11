@@ -34,7 +34,7 @@ class UserServiceTestCasa(TestCase):
             "password": "@Teste123",
         }
         with self.assertRaises(exceptions.APIException) as ctx:
-            user = self.service.create_user(data=payload)
+            self.service.create_user(data=payload)
 
         self.assertEqual(
             ctx.exception.detail.title(), "Já Existe Um Usuário Com Esse Username/Email"
